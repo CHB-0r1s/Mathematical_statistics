@@ -23,3 +23,7 @@ def table_to_var_row(x: pd.Series, n: pd.Series) -> pd.Series:
     for i in range(len(x)):
         res += [x[i]] * n[i]
     return pd.Series(res).sort_values()
+
+def row_to_table(x: pd.Series) -> pd.Series: # Статистический ряд
+    res = x.value_counts()
+    return res
